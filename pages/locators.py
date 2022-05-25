@@ -23,3 +23,4 @@ class ProductPageLocators():
     PRODUCT_NAME = (By.CSS_SELECTOR, ".col-sm-6.product_main>h1")
     BUSKET_PRICE = (By.CSS_SELECTOR, ".alert.alert-safe.alert-noicon.alert-info.fade.in>.alertinner>p>strong")
     PRODUCT_PRICE = (By.CSS_SELECTOR, ".col-sm-6.product_main>.price_color")
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#messages>:nth-child(1) .alertinner>strong")
