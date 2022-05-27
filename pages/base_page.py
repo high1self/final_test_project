@@ -3,6 +3,8 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from .locators import BasePageLocators
+from .locators import LoginPageLocators
+
 
 
 class BasePage():
@@ -54,4 +56,7 @@ class BasePage():
         link = self.browser.find_element(*BasePageLocators.BUSKET_OPEN)
         link.click()
 
+    def should_be_authorized_user(self):
+        assert self.is_element_present(*LoginPageLocators.USER_ICON), "User icon is not presented," \
+                                                                     " probably unauthorised user"
 

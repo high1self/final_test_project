@@ -13,6 +13,7 @@ class LoginPageLocators():
     REG_PASSWORD = (By.XPATH, "//input[@name='registration-password1']")
     REG_PASSWORD_REPEAT = (By.XPATH, "//input[@name='registration-password2']")
     BUTTON_REG = (By.XPATH, "//button[@name='registration_submit']")
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
 
 class ProductPageLocators():
     ADD_TO_BUSKET_BUTTON = (By.CSS_SELECTOR, ".btn.btn-lg.btn-primary.btn-add-to-basket")
