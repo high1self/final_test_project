@@ -12,7 +12,7 @@ class ProductPage(BasePage):
     # добавляем в корзину товар
     def add_to_basket(self):
         # открываем страницу
-        link = self.browser.find_element(*ProductPageLocators.ADD_TO_BUSKET_BUTTON)
+        link = self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET_BUTTON)
         link.click()
 
     # решаем уравнение и получаем код
@@ -32,14 +32,14 @@ class ProductPage(BasePage):
 
     # сравниваем цены в корзине и в карточке товара
     def compare_prices(self):
-        busket_price = self.browser.find_element(*ProductPageLocators.BUSKET_PRICE).text
+        busket_price = self.browser.find_element(*ProductPageLocators.BASKET_PRICE).text
         product_price = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text
         assert busket_price == product_price, "Prices dont equal"
 
     # сравниваем имя в корзине и в карточке товара
     def compare_product_name(self):
         product_name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME).text
-        product_name_in_basket = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME_IN_BUSKET).text
+        product_name_in_basket = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME_IN_BASKET).text
         assert product_name == product_name_in_basket, "Names dont equal"
 
     # проверяем что нет элемента
@@ -47,6 +47,7 @@ class ProductPage(BasePage):
         assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
             "Success message is presented, but should not be"
 
+    # проверяем что сообщение об успешном добавлении в корзину исчезает
     def should_be_success_message_is_disappeared(self):
         assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), \
             "Success message is presented, but should disappeared"

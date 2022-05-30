@@ -1,1 +1,1 @@
-# final_test_project
+# final_test_project: Pytest + Page Object + Selenium
